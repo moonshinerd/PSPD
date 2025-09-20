@@ -12,8 +12,6 @@ int main(int argc, char** argv){
     MPI_Comm_rank(MPI_COMM_WORLD, &rank); // Obtém o rank do processo, MPI_COMM_WORLD é o comunicador padrão que inclui todos os processos
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs); // Obtém o número total de processos no comunicador MPI_COMM_WORLD
 
-    printf("Processo %d de %d iniciado\n", rank, nprocs);
-    fflush(stdout);
 
     if (rank == 0) { // se for o processo MASTER (rank 0)
         printf("Sou MASTER (rank %d), estou aguardando mensagens dos SLAVES...\n", rank);
